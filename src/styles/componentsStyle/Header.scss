@@ -3,15 +3,23 @@
 nav {
   display: flex;
   justify-content: space-between;
+  height: 70px;
   padding: 0 24px;
   border-bottom: 1px solid var(--very-light-pink);
+
+  .logo {
+    width: 100px;
+    display: flex;
+  }
+
+  .navbar-left {
+    align-items: baseline;
+  }
 }
 .menu {
   display: none;
 }
-.logo {
-  width: 100px;
-}
+
 .navbar-left ul,
 .navbar-right ul {
   list-style: none;

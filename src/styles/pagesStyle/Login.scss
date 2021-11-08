@@ -10,13 +10,15 @@
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	width: 300px;
+
+	img {
+		width: 150px;
+		margin-bottom: 48px;
+		justify-self: center;
+		display: block;
+	}
 }
-.logo {
-	width: 150px;
-	margin-bottom: 48px;
-	justify-self: center;
-	display: none;
-}
+
 .form {
 	display: flex;
 	flex-direction: column;
