@@ -1,11 +1,16 @@
 @use '../vars';
 
 .MyOrder {
-	width: 360px;
+	width: 460px;
 	padding: 24px;
 	box-sizing: border-box;
 	position: absolute;
-	right: 0;
+	right: 20px;
+	top: 50px;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid var(--very-light-pink);
+	animation: swipeLeft 0.50s ease;
 }
 .title-container {
 	display: flex;
@@ -52,6 +57,16 @@
 	font-weight: bold;
 	height: 50px;
 }
+
+@keyframes swipeLeft {
+	0% {
+	  width: 0;
+	}
+	100% {
+	  width: 360px;
+	}
+  }
+
 @media (max-width: 640px) {
 	.MyOrder {
 		width: 100%;

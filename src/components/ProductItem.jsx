@@ -4,7 +4,7 @@ import '../styles/componentsStyle/ProductItem.scss';
 import add_cart from '@icons/bt_add_to_cart.svg';
 
 const ProductItem = ({ product }) => {
-	const [ addToCart ] = React.useContext(AppContext);
+	const { addToCart } = React.useContext(AppContext);
 
 	const handleClick = itemProduct => {
 		addToCart(itemProduct)

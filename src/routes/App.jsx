@@ -16,10 +16,10 @@ import { useInitialState } from '../hooks/useInitialState';
 import '../styles/global.scss';
 
 function App() {
-    const inititialState = useInitialState(); //guarda todo lo que esta retornando
+    const initialState = useInitialState(); //guarda todo lo que esta retornando
 
     return (
-        <AppContext.Provider value={inititialState}>
+        <AppContext.Provider value={initialState}>
             <BrowserRouter>
                 <Layout>
                     <Routes>
