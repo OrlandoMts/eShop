@@ -18,7 +18,7 @@ const MyOrder = () => {
 					<p>
 						<span>Total</span>
 					</p>
-					<p>$560.00</p>
+					<p>${ state.total }</p>
 				</div>
 				<button className="primary-button">
 					Checkout
