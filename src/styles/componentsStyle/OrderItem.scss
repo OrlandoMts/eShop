@@ -8,6 +8,7 @@
 	align-items: center;
 }
 .OrderItem div {
+	display: flex;
 	margin: 0;
 	object-fit: contain;
 }
@@ -23,4 +24,16 @@
 .OrderItem p:nth-child(3) {
 	font-size: var(--md);
 	font-weight: bold;
+}
+
+.OrderItem div p {
+	margin: 0 7px;
+}
+
+.OrderItem .OrderItem__quantities--increment {
+	cursor: pointer;
+}
+
+.OrderItem .OrderItem__quantities--decrement {
+	cursor: pointer;
 }

@@ -3,6 +3,7 @@ import React from "react";
 const initialState = {
     cart: [],
     total: 0,
+    quantity: 1,
 }
 
 const useInitialState = () => {
@@ -15,7 +16,7 @@ const useInitialState = () => {
                 //... significa que mantendra el estado anterior
                 ... state,
                 cart: [...state.cart, payload], //lo que ya existe lo mantiene, lo tiene presente; y agrega el producto nuevo
-                total: state.total + payload.price,
+                total: (state.total + payload.price) * state.quantity,
             });
         }
     };
@@ -25,15 +26,31 @@ const useInitialState = () => {
         setState({
             ...state,
             cart: [...newArray],
-            total: state.total - payload.price,
+            total: (state.total - payload.price) * state.quantity,
         })
+    }
+
+    const addQuantity = () => {
+        setState({
+            ...state,
+            quantity: state.quantity + 1,
+        })
+    }
+
+    const removeQuantity = () => {
+        state.quantity === 1 ? state.quantity : setState({
+            ...state,
+            quantity: state.quantity - 1,
+        }) 
     }
 
     return {
         // esto estará conectado, todos los componentes pueden acceder al Objeto
         state,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        addQuantity,
+        removeQuantity,
     };
 }
 
