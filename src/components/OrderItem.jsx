@@ -4,7 +4,16 @@ import '../styles/componentsStyle/OrderItem.scss';
 import icon_close from '@icons/icon_close.png';
 
 const OrderItem = ({ product }) => {
-	const { state, removeFromCart, addQuantity, removeQuantity } = React.useContext(AppContext);
+	const { removeFromCart, } = React.useContext(AppContext);
+	const [ quantity, setQuantity ] = React.useState(1);
+
+	const addQuantity = () => {
+        setQuantity(quantity + 1);
+    }
+
+    const removeQuantity = () => {
+        quantity === 1 ? quantity : setQuantity(quantity-1)
+    }
 
 	const handleClickRemove = itemProduct => {
 		removeFromCart(itemProduct);
@@ -18,10 +27,10 @@ const OrderItem = ({ product }) => {
 			<p>{product.title}</p>
 			<div className="OrderItem__quantities">
 				<p className="OrderItem__quantities--decrement" onClick={removeQuantity}>-</p>
-				<p>{ state.quantity }</p>
+				<p>{ quantity }</p>
 				<p className="OrderItem__quantities--increment" onClick={addQuantity}>+</p>
 			</div>
-			<p>${product.price * state.quantity}</p>
+			<p>${product.price * quantity}</p>
 			<img src={icon_close} alt="close" onClick={()=>handleClickRemove(product)}/>
 		</div>
     )
